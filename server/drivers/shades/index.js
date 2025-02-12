@@ -25,9 +25,54 @@ async function onCommand(command, answer) {
   const { position } = command;
   const device = config.devices.find(d => d.device === command.device);
   if (device && device.shades) {
-    try {
-      const { zones, gateway } = device.shades;
-      const zoneList = Array.isArray(zones) ? zones : [zones];
+    const shadeIndex = command.request.body.shadeIndex;
+    // Case when the 1st widget calls
+    if (shadeIndex == 0) {
+      try {
+        const { zones, gateway } = device.shades;
+        const zoneList = Array.isArray(zones) ? zones : [zones];
+            for (const zone of zoneList) {
+              // setTimeout(() => setShades(zone, position), n * 100);
+              await setShades(gateway, zone, position, command.device);
+            }
+          answer({ result: true });
+        }
+        catch(e) {
+          answer({ error: true });
+        }
+      }
+    // Case when the 2nd widget calls
+    if (shadeIndex == 1) {
+      try {
+        const { zones, gateway } = device.shades;
+        const zoneListTemp = Array.isArray(zones) ? zones : [zones];
+         zoneList = zoneListTemp[0];
+          for (const zone of zoneList) {
+            // setTimeout(() => setShades(zone, position), n * 100);
+            await setShades(gateway, zone, position, command.device);
+          }
+        answer({ result: true });
+      }
+      catch(e) {
+        answer({ error: true });
+      }
+    }
+    // Case when the 3d widget calls
+    if (shadeIndex == 2) {
+      try {
+        const { zones, gateway } = device.shades;
+        const zoneListTemp = Array.isArray(zones) ? zones : [zones];
+         zoneList = zoneListTemp[1];
+          for (const zone of zoneList) {
+            // setTimeout(() => setShades(zone, position), n * 100);
+            await setShades(gateway, zone, position, command.device);
+          }
+        answer({ result: true });
+      }
+      catch(e) {
+        answer({ error: true });
+      }
+    }
         for (const zone of zoneList) {
           // setTimeout(() => setShades(zone, position), n * 100);
           await setShades(gateway, zone, position, command.device);
