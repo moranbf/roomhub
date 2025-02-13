@@ -40,7 +40,7 @@
       <Row>
         <Name>Zone 1</Name>
         <Widget>
-          <WidgetId>shades_2_present</WidgetId>
+          <WidgetId>shades_2_preset</WidgetId>
           <Type>GroupButton</Type>
           <Options>size=4;columns=4</Options>
           <ValueSpace>
@@ -66,7 +66,7 @@
       <Row>
         <Name>Zone 2</Name>
         <Widget>
-          <WidgetId>shades_3_present</WidgetId>
+          <WidgetId>shades_3_preset</WidgetId>
           <Type>GroupButton</Type>
           <Options>size=4</Options>
           <ValueSpace>
