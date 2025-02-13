@@ -9,13 +9,11 @@ function setMolexLight(gateway, zone, level, device) {
   }
   const { host, projectId, token } = settings;
 
-
   const agent = new https.Agent({
     rejectUnauthorized: false // This disables SSL certificate validation
     });
 
   const url =  `${host}/transcend/api/v1/zone/brightness?projectid=${projectId}&zoneid=${zone}`;
-
   const options = {
     agent: agent,
     method: 'PUT',
