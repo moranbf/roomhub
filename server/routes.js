@@ -108,7 +108,14 @@ function createRoutes(app, db) {
 
     if (item) {
       const { shades, lights, reportIssue }  = item;
-      panels.shades = shades ? uiFile('shades.xml') : '';
+      // set shad
+      shadeZones = item.shades ? item.shades.zones : '';
+      if ( shadeZones.length == 1) {
+        panels.shades = shades ? uiFile('shades.xml') : '';
+        }
+      else if (shadeZones.length == 2) {
+        panels.shades = shades ? uiFile('shades-multi-zone.xml') : '';
+        }
       panels.lights = lights ? uiFile('lights.xml') : '';
       panels['report-issue'] = reportIssue ? uiFile('report-issue.xml') : '';
     }

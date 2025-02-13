@@ -23,7 +23,7 @@ function setShades(gateway, zone, level, device) {
 async function onCommand(command, answer) {
   const config = Config.current();
   const { position } = command;
-  const device = config.devices.find(d => d.device === command.device);
+  const device = config.devices.fi nd(d => d.device === command.device);
   if (device && device.shades) {
     const shadeIndex = command.request.body.shadeIndex;
     // Case when the 1st widget calls
