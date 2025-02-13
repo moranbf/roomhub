@@ -26,7 +26,7 @@ async function onCommand(command, answer) {
   const device = config.devices.find(d => d.device === command.device);
   if (device && device.shades) {
     console.log(command);
-    //const shadeIndex = device.shades.options.body.shadeIndex;
+    const shadeIndex = command.shadeIndex;
     // Case when the 1st widget calls
     if (shadeIndex == 0) {
       try {
