@@ -84,7 +84,9 @@ function onEvent(event) {
     else if (WidgetId === 'shades_2_preset') {
       send({ type: 'shades', shadeIndex: 1, position: parseInt(Value) });
     }
-
+    else if (WidgetId === 'shades_3_preset') {
+      send({ type: 'shades', shadeIndex: 2, position: parseInt(Value) });
+    }
     // reset group buttons
     xapi.Command.UserInterface.Extensions.Widget.UnsetValue({ WidgetId: 'shades_1_preset' }).catch(() => {});
     xapi.Command.UserInterface.Extensions.Widget.UnsetValue({ WidgetId: 'shades_2_preset' }).catch(() => {});
