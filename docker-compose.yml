@@ -4,7 +4,6 @@ services:
   manhattan:
     build: .
     volumes:
-      - ./configIT.json:/usr/src/app/config.json
       - ./roomhub.db:/usr/src/app/roomhub.db
       - /home/ops/certs:/usr/src/app/server/certs
     ports:
