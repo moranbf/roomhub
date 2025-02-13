@@ -111,6 +111,7 @@ function createRoutes(app, db) {
       // Set shadeZones array up
       shadeZones = item.shades ? item.shades.zones : '';
       // If we only have 1 zone use the old shades.xml
+      console.log(shadeZones.toString());
       if (shadeZones.length == 1) {
         panels.shades = shades ? uiFile('shades.xml') : '';
         }
