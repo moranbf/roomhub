@@ -16,7 +16,7 @@ function setShades(gateway, zone, level, device) {
     },
   };
 
-  console.log('mecho shade', url, options);
+  //console.log('mecho shade', url, options);
   return Logger.fetchAndLog({ url, options }, 'Set Mecho shades', device);
 }
 
@@ -25,7 +25,7 @@ async function onCommand(command, answer) {
   const { position } = command;
   const device = config.devices.find(d => d.device === command.device);
   if (device && device.shades) {
-    console.log(command);
+    //console.log(command);
     const shadeIndex = command.shadeIndex;
     // Case when the 1st widget calls
     if (shadeIndex == 0) {
