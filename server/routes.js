@@ -117,7 +117,7 @@ function createRoutes(app, db) {
         }
       // If we only have 2 zones use the new xml which has 2 additional rows
       else if (shadeZones.length == 2) {
-        panels.shades = shades ? uiFile('shades-multi-zone.xml') : '';
+        panels.shades = shades ? uiFile('shades-multi-zone-update.xml') : '';
         }
       panels.lights = lights ? uiFile('lights.xml') : '';
       panels['report-issue'] = reportIssue ? uiFile('report-issue.xml') : '';

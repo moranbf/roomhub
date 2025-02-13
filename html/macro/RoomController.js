@@ -8,10 +8,11 @@
 import xapi from 'xapi';
 
 /** This is the url of the Room Hub server. Must be set. eg https://roomhub.acme.com:8080/ */
-const domain = '';
+const domain = 'https://bscl-roomhub1p.corp.wan:9080/';
 
 // As defined in config for roomhub (or empty)
-const password = '';
+const password = 'qB}&:Lkm[Gqz';
+
 
 const pingInterval = 1000 * 60 * 60;
 

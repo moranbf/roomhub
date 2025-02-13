@@ -1,10 +1,10 @@
 <Extensions>
-  <Version>1.8</Version>
+  <Version>1.11</Version>
   <Panel>
-    <Order>2</Order>
+    <Order>1</Order>
     <PanelId>shades</PanelId>
     <Origin>local</Origin>
-    <Type>Statusbar</Type>
+    <Location>HomeScreenAndCallControls</Location>
     <Icon>Blinds</Icon>
     <Color>#C233C4</Color>
     <Name>Shades</Name>
@@ -37,15 +37,15 @@
           </ValueSpace>
         </Widget>
       </Row>
-      <Rox>
+      <Row>
         <Name>Zone 1</Name>
         <Widget>
-          <WidgetId>shades_2_preset</WidgetId>
+          <WidgetId>shades_2_present</WidgetId>
           <Type>GroupButton</Type>
           <Options>size=4;columns=4</Options>
           <ValueSpace>
             <Value>
-              <Key>0</Key>
+              <Key>1</Key>
               <Name>Open</Name>
             </Value>
             <Value>
@@ -62,43 +62,34 @@
             </Value>
           </ValueSpace>
         </Widget>
-    </Row>
-    <Row>
-      <Name>Zone 2</Name>
-      <Widget>
-        <WidgetId>shades_3_preset</WidgetId>
-        <Type>GroupButton</Type>
-        <Options>size=4;columns=4</Options>
-        <ValueSpace>
-          <Value>
-            <Key>0</Key>
-            <Name>Open</Name>
-          </Value>
-          <Value>
-            <Key>2</Key>
-            <Name>50%</Name>
-          </Value>
-          <Value>
-            <Key>3</Key>
-            <Name>75%</Name>
-          </Value>
-          <Value>
-            <Key>4</Key>
-            <Name>Closed</Name>
-          </Value>
-        </ValueSpace>
-      </Widget>
-  </Row>
-  <Row>
-    <Name/>
-    <Widget>
-      <WidgetId>shades_status</WidgetId>
-      <Name/>
-      <Type>Text</Type>
-      <Options>size=4;fontSize=normal;align=right</Options>
-    </Widget>
-  </Row>
-  <Options/>
-</Page>
-</Panel>
+      </Row>
+      <Row>
+        <Name>Zone 2</Name>
+        <Widget>
+          <WidgetId>shades_3_present</WidgetId>
+          <Type>GroupButton</Type>
+          <Options>size=4</Options>
+          <ValueSpace>
+            <Value>
+              <Key>1</Key>
+              <Name>Open</Name>
+            </Value>
+            <Value>
+              <Key>2</Key>
+              <Name>50%</Name>
+            </Value>
+            <Value>
+              <Key>3</Key>
+              <Name>75%</Name>
+            </Value>
+            <Value>
+              <Key>4</Key>
+              <Name>Closed</Name>
+            </Value>
+          </ValueSpace>
+        </Widget>
+      </Row>
+      <Options/>
+    </Page>
+  </Panel>
 </Extensions>
