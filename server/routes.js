@@ -108,11 +108,13 @@ function createRoutes(app, db) {
 
     if (item) {
       const { shades, lights, reportIssue }  = item;
-      // set shad
+      // Set shadeZones array up
       shadeZones = item.shades ? item.shades.zones : '';
-      if ( shadeZones.length == 1) {
+      // If we only have 1 zone use the old shades.xml
+      if (shadeZones.length == 1) {
         panels.shades = shades ? uiFile('shades.xml') : '';
         }
+      // If we only have 2 zones use the new xml which has 2 additional rows
       else if (shadeZones.length == 2) {
         panels.shades = shades ? uiFile('shades-multi-zone.xml') : '';
         }
