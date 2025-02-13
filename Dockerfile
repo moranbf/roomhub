@@ -9,4 +9,4 @@ COPY . .
 # RUN npm run build
 
 EXPOSE 8080
-CMD [ "node", "server/server.js" ]
+CMD [ "node", "--inspect=0.0.0.0:9229", "server/server.js" ]
