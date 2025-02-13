@@ -73,15 +73,7 @@ async function onCommand(command, answer) {
         answer({ error: true });
       }
     }
-        for (const zone of zoneList) {
-          // setTimeout(() => setShades(zone, position), n * 100);
-          await setShades(gateway, zone, position, command.device);
-        }
-      answer({ result: true });
-    }
-    catch(e) {
-      answer({ error: true });
-    }
+  
   }
   else {
     answer('Device does not have shades configured', 400);
