@@ -1,5 +1,6 @@
 const Logger = require('../../logger');
 const Config = require('../../config-server');
+const https = require('https');
 const { join } = require('path');
 
 function setMolexLight(gateway, zone, level, device) {
@@ -8,12 +9,12 @@ function setMolexLight(gateway, zone, level, device) {
     throw new Error('Gateway not found', settings);
   }
   const { host, projectId, token } = settings;
-
-  const agent = new https.Agent({
-    rejectUnauthorized: false // This disables SSL certificate validation
-    });
-
   const url =  `${host}/transcend/api/v1/zone/brightness?projectid=${projectId}&zoneid=${zone}`;
+
+const agent = new https.Agent({
+  rejectUnauthorized: false // This disables SSL certificate validation
+});
+
   const options = {
     agent: agent,
     method: 'PUT',

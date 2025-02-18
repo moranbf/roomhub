@@ -187,33 +187,33 @@ async function ping() {
   await send({ type: 'heartbeat' });
 }
 
-function handleVoiceAssistDirective(cmd) {
+function handleVoiceAssistDirective(event) {
   // console.log('voice assist:' + cmd.name);
-  switch(cmd.name) {
-    case'open-shades':
-      send({ type: 'shades', shadeIndex: -1, position: 0 });
+  const phrase = event.Text.toLowerCase();
+  switch(event.phrase) {
+    case 'open the shades':
+      send({ type: 'shades', shadeIndex: 0, position: 0 });
       break;
-    case'close-shades':
-      send({ type: 'shades', shadeIndex: -1, position: 4 });
+    case'close the shades':
+      send({ type: 'shades', shadeIndex: 4, position: 4 });
       break;
-    case'set-lights-state':
-      send({ type: 'lights', level: cmd.payload.level });
-      break;
-    case'turn-lights-on':
+    case 'turn the lights on':
       send({ type: 'lights', level: 100 });
       break;
-    case'turn-lights-off':
+    
+    case 'turn the lights off':
       send({ type: 'lights', level: 0 });
       break;
-    case 'turn-party-mode-on':
+    
+    case 'turn party mode on':
       send({ type: 'lights', level: 10 });
-      send({ type: 'shades', shadeIndex: -1, position: 3 });
+      send({ type: 'shades', shadeIndex: 0, position: 3 });
       xapi.Command.Audio.Volume.Set({ Level: 70 });
       xapi.Command.UserInterface.WebView.Display({ Url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' });
       break;
-    case 'turn-party-mode-off':
+    case 'turn party mode off':
       send({ type: 'lights', level: 70 });
-      send({ type: 'shades', shadeIndex: -1, position: 1 });
+      send({ type: 'shades', shadeIndex: 0, position: 1 });
       xapi.Command.UserInterface.WebView.Clear();
       break;
     default:
@@ -254,5 +254,8 @@ async function init() {
 
   setTimeout(installUiExtensions, 10 * 1000);
 }
-
+xapi.event.on('UserInterfaceInputEvent', (event) => {
+  if (event.Type === 'voice') {
+    onVoiceCommand(event);
+  }
 init();
