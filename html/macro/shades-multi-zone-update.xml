@@ -89,6 +89,15 @@
           </ValueSpace>
         </Widget>
       </Row>
+      <Row>
+        <Name/>
+        <Widget>
+          <WidgetId>shades_status</WidgetId>
+          <Name/>
+          <Type>Text</Type>
+          <Options>size=4;fontSize=normal;align=right</Options>
+        </Widget>
+      </Row>
       <Options/>
     </Page>
   </Panel>
