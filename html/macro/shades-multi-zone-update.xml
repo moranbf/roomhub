@@ -95,7 +95,7 @@
           <WidgetId>shades_status</WidgetId>
           <Name/>
           <Type>Text</Type>
-          <Options>size=4;fontSize=normal;align=right</Options>
+          <Options>size=4;fontSize=normal;align=center</Options>
         </Widget>
       </Row>
       <Options/>
