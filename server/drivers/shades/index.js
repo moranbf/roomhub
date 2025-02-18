@@ -47,11 +47,9 @@ async function onCommand(command, answer) {
       try {
         const { zones, gateway } = device.shades;
         const zoneListTemp = Array.isArray(zones) ? zones : [zones];
-         zoneList = zoneListTemp[0];
-          for (const zone of zoneList) {
+        const zone = zoneListTemp[0];
             // setTimeout(() => setShades(zone, position), n * 100);
-            await setShades(gateway, zone, position, command.device);
-          }
+          await setShades(gateway, zone, position, command.device);
         answer({ result: true });
       }
       catch(e) {
@@ -63,11 +61,9 @@ async function onCommand(command, answer) {
       try {
         const { zones, gateway } = device.shades;
         const zoneListTemp = Array.isArray(zones) ? zones : [zones];
-         zoneList = zoneListTemp[1];
-          for (const zone of zoneList) {
+         zone = zoneListTemp[1];
             // setTimeout(() => setShades(zone, position), n * 100);
-            await setShades(gateway, zone, position, command.device);
-          }
+          await setShades(gateway, zone, position, command.device);
         answer({ result: true });
       }
       catch(e) {
