@@ -68,7 +68,7 @@
         <Widget>
           <WidgetId>shades_3_preset</WidgetId>
           <Type>GroupButton</Type>
-          <Options>size=4</Options>
+          <Options>size=4;columns=4</Options>
           <ValueSpace>
             <Value>
               <Key>0</Key>
