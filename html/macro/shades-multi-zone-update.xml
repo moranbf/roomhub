@@ -45,7 +45,7 @@
           <Options>size=4;columns=4</Options>
           <ValueSpace>
             <Value>
-              <Key>1</Key>
+              <Key>0</Key>
               <Name>Open</Name>
             </Value>
             <Value>
@@ -71,7 +71,7 @@
           <Options>size=4</Options>
           <ValueSpace>
             <Value>
-              <Key>1</Key>
+              <Key>0</Key>
               <Name>Open</Name>
             </Value>
             <Value>
