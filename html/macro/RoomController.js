@@ -91,6 +91,7 @@ function onEvent(event) {
     // reset group buttons
     xapi.Command.UserInterface.Extensions.Widget.UnsetValue({ WidgetId: 'shades_1_preset' }).catch(() => {});
     xapi.Command.UserInterface.Extensions.Widget.UnsetValue({ WidgetId: 'shades_2_preset' }).catch(() => {});
+    xapi.Command.UserInterface.Extensions.Widget.UnsetValue({ WidgetId: 'shades_3_preset' }).catch(() => {});
   }
 }
 
