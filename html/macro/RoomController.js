@@ -11,7 +11,7 @@ import xapi from 'xapi';
 const domain = 'https://bscl-roomhub1p.corp.wan:9080/';
 
 // As defined in config for roomhub (or empty)
-const password = 'qB}&:Lkm[Gqz';
+const password = '';
 
 
 const pingInterval = 1000 * 60 * 60;
